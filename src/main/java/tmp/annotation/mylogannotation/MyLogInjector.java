@@ -11,7 +11,6 @@ public class MyLogInjector {
 
 		Class<?> cl = obj.getClass();
 		res.put("className", cl.getName());
-		// cl is java.lang.Class if you pass in App.class as obj
 		for(Method m : cl.getDeclaredMethods()) {
 			MyLog mylog = m.getAnnotation(MyLog.class);
 			if(mylog != null) {

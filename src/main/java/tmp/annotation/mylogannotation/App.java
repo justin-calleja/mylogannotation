@@ -1,5 +1,7 @@
 package tmp.annotation.mylogannotation;
 
+import java.util.Map;
+
 /**
  * Hello world!
  *
@@ -8,8 +10,11 @@ public class App {
 
 	@MyLog(message = "hello world")
     public static void main( String[] args ) {
-    	MyLogInjector.injectLogs(new App());
-
+    	Map<String, String> res = MyLogInjector.injectLogs(new App());
+    	
+    	System.out.println(res.get("main"));
+    	System.out.println(res.get("blah"));
+    	System.out.println(res.get("bleh"));
     }
 	
 	@MyLog(message = "hello blah")
